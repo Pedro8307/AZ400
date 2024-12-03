@@ -1,18 +1,21 @@
 import os
-from azure.identity import DefaultAzureCredential
+from azure.identity import AzureCliCredential
 from azure.mgmt.resource import ResourceManagementClient
 
-# Acquire a credential object using DefaultAzureCredential
-credential = DefaultAzureCredential()
+# Explicitly set the path to Azure CLI for Linux (Codespaces environment)
+os.environ["AZURE_CLI_PATH"] = "/usr/bin/az"  # Adjust if your 'which az' command returns a different path
+
+# Authenticate using AzureCliCredential
+credential = AzureCliCredential()
 
 # Use your Azure subscription ID
 subscription_id = "a2370bc5-c828-41f1-8c20-0d4f829f108d"
 
-# Initialize the Resource Management Client
+# Initialize Resource Management Client
 resource_client = ResourceManagementClient(credential, subscription_id)
 
 # Define the resource group parameters
-resource_group_name = "Az400"  # Resource group name
+resource_group_name = "Az-400"  # Resource group name
 location = "uksouth"           # Azure region
 
 # Create or update the resource group
