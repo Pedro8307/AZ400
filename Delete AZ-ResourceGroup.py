@@ -5,13 +5,13 @@ from azure.mgmt.resource import ResourceManagementClient
 credential = AzureCliCredential()
 
 # Your Azure subscription ID
-subscription_id = "a2370bc5-c828-41f1-8c20-0d4f829f108d"
+subscription_id = "VALUE"
 
 # Initialize Resource Management Client
 resource_client = ResourceManagementClient(credential, subscription_id)
 
 # Define the resource group to delete
-resource_group_name = "Az-400"  # Replace with your resource group name
+resource_group_name = "VALUE"  # Replace with your resource group name
 
 # Delete the resource group
 print(f"Deleting resource group '{resource_group_name}'...")
