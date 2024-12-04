@@ -5,7 +5,7 @@ from azure.mgmt.resource import ResourceManagementClient
 credential = AzureCliCredential()
 
 # Your Azure subscription ID
-subscription_id = "a2370bc5-c828-41f1-8c20-0d4f829f108d"
+subscription_id = "SUBSCRIPTION"
 
 # Initialize Resource Management Client
 resource_client = ResourceManagementClient(credential, subscription_id)
